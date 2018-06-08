@@ -27,6 +27,26 @@
         </ul>
 
 
+        <section>
+
+            <h2>Top Failures</h2>
+
+            <table class="table table-condensed table-sm">
+                {% for f in failures %}
+
+                    <tr>
+                        <td>
+                            <a href="{{f.url}}">{{f['project_name']}}</a>
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+            </table>
+
+        </section>
+
+
     </div>
 
 

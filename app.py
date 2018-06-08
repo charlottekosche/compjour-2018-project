@@ -1,4 +1,4 @@
-from helpers.data import get_records
+from helpers.data import *
 from flask import Flask, render_template
 
 myapp = Flask(__name__)
@@ -9,7 +9,9 @@ YEARS = list(range(2009, 2018))
 
 @myapp.route("/")
 def homepage():
-    return render_template('homepage.html', records=RECORDS, years=YEARS)
+    failures=get_top_failures(RECORDS, 10)
+    return render_template('homepage.html', records=RECORDS, years=YEARS,
+                            failures=failures)
 
 @myapp.route("/year/<year>")
 def yearpage(year):
