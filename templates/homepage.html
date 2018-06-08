@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles/mystyles.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+
+        <h1>Homepage</h1>
+
+        <p>
+            There are {{records | length }} records.
+        </p>
+
+
+        <ul>
+            {% for y in years %}
+                <li><a href="/year/{{y}}">{{y}}</a></li>
+            {% endfor %}
+        </ul>
+
+
+    </div>
+
+
+</body>
+</html>
